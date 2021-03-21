@@ -1,0 +1,100 @@
+.bottom {
+  background-color: $brightRed;
+  position: relative;
+  height: 13.875rem;
+  width: 100%;
+  @include breakpoint-down(medium) {
+    height: 100%;
+  }
+  @include breakpoint-down(small) {
+    height: 407px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background-image: url("../../images/bg-tablet-pattern.svg");
+    background-repeat: no-repeat;
+    background-position: 9.125rem -3.125rem;
+    background-size: 40%;
+    opacity: 0.1;
+    @include breakpoint-down(small) {
+      background-size: 90%;
+      background-position: -19rem 5.125rem;
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background-image: url("../../images/bg-tablet-pattern.svg");
+    background-repeat: no-repeat;
+    background-position: 70.125rem -41.7rem;
+    opacity: 0.1;
+  }
+
+  &__content {
+    h2 {
+      position: relative;
+      width: 27.25rem;
+      height: 5.0625rem;
+      color: white;
+
+      @include breakpoint-down(small) {
+        padding-right: 2rem;
+        padding-left: 2rem;
+        line-height: 1.5;
+      }
+    }
+    @include breakpoint-down(medium) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  &__button {
+    .button {
+      position: relative;
+      background-color: $veryPaleRed;
+      color: $brightRed;
+      z-index: 2;
+      box-shadow: 0 12px 10px -6px rgba($veryPaleRed, 0.4);
+
+      @include breakpoint-down(small) {
+        padding: 10px;
+        min-width: 90px;
+        max-width: 90px;
+        height: 100%;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(243, 97, 60, 0.25);
+        opacity: 0;
+        border-radius: 50px;
+        transition: opacity 150ms ease-in-out;
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+  }
+}

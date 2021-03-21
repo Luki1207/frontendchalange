@@ -1,0 +1,123 @@
+.feature {
+  h3 {
+    @include breakpoint-down(small) {
+      font-size: 15px;
+    }
+  }
+  &__grid {
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 0;
+    padding-right: 0;
+
+    @include breakpoint-up(large) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__text {
+    h2 {
+      width: 27.125rem;
+
+      @include breakpoint-down(medium) {
+        width: 100%;
+        text-align: center;
+      }
+      @include breakpoint-down(small) {
+        line-height: 1.5;
+      }
+    }
+
+    p {
+      width: 20rem;
+      padding-bottom: 3.375rem;
+      line-height: 1.8rem;
+      text-align: justify;
+      font-size: $font-med;
+
+      @include breakpoint-down(medium) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  &__textdua {
+    p {
+      width: 25.9375rem;
+      padding-bottom: 3.375rem;
+      line-height: 1.8rem;
+      text-align: justify;
+      font-size: $font-med;
+
+      @include breakpoint-down(medium) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .body {
+      padding-left: 5.5rem;
+      @include breakpoint-down(medium) {
+        font-size: $font-med;
+        width: 100%;
+        padding-left: 0;
+      }
+    }
+
+    .head {
+      height: 40px;
+      .card-number {
+        position: relative;
+        z-index: 99;
+        padding: 0.25rem 1.5rem;
+        min-width: 80px;
+        max-width: 80px;
+        height: 100%;
+        margin-right: 12px;
+        font-size: 1.2rem;
+        font-weight: 700;
+
+        background-color: $brightRed;
+        color: $varyLightGray;
+        border-radius: 50px;
+      }
+    }
+    @include breakpoint-down(medium) {
+      .head::before {
+        content: "";
+        width: 100%;
+        height: 40px;
+        background-color: $brightRed;
+        position: absolute;
+        border-radius: 50px;
+        opacity: 0.15;
+      }
+
+      p {
+        text-align: justify;
+      }
+    }
+  }
+
+  .satu,
+  .dua,
+  .tiga {
+    padding-top: 1.0625rem;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 99;
+  }
+
+  .container--pall {
+    @include breakpoint-down(medium) {
+      padding: 0 2rem;
+    }
+  }
+  @include breakpoint-down(small) {
+    margin-top: 105px;
+  }
+}
